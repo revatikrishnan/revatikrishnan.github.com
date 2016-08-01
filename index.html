@@ -311,7 +311,6 @@ color: gray;
     <thead>
       <tr>
         <th class="text-center">Blogs </th>
-        <th class="text-center">Click on the link and see a preview here</i></th>
       </tr>
     </thead>
     <tbody>
@@ -321,19 +320,21 @@ color: gray;
       <button type="button" class="btn btn-lg" data-toggle="collapse" data-target="#demo">click to see the list of blogs published using <i class="fa fa-wordpress"></i><span class="caret"></span></button>
       <br>
 		<div id="demo" class="collapse">
-		<a class="text-primary" style="text-decoration: underline" id="testng" onclick="return false" href="https://javamyuniverse.wordpress.com/2016/07/14/factory-of-testng-with-selenium-webdriver/">Factory of TestNG with Selenium web-driver</a>
+		<a class="text-primary" style="text-decoration: underline" data-toggle="tooltip" title="Click on the link to see the preview below" id="testng" onclick="return false" href="https://javamyuniverse.wordpress.com/2016/07/14/factory-of-testng-with-selenium-webdriver/">Factory of TestNG with Selenium web-driver</a>
  		<br>
- 		<a class="text-primary" style="text-decoration: underline" id="lambda" onclick="return false" href="https://javamyuniverse.wordpress.com/2016/06/27/26/">Java 8 New feature - Lambda </a>
+ 		<a class="text-primary" style="text-decoration: underline" data-toggle="tooltip" title="Click on the link to see the preview below" id="lambda" onclick="return false" href="https://javamyuniverse.wordpress.com/2016/06/27/26/">Java 8 New feature - Lambda </a>
 		</div>
  		
 		
 		</td>
-		<td>
-		<a id="newWin" href="https://javamyuniverse.wordpress.com" target="_blank">To see this in a separate window click here</a>
+      </tr>
+      <tr>
+      <td>
+      
+      <a id="newWin" href="https://javamyuniverse.wordpress.com" target="_blank">To see this in a separate window click here</a>
 		<iframe id="myframe" style="width:90%" height=500px src="https://javamyuniverse.wordpress.com">
 		</iframe>
 		<br>
-		
 		</td>
       </tr>
     </tbody>
@@ -424,6 +425,7 @@ color: gray;
 
 <script>
 $(document).ready(function(){
+	 $('[data-toggle="tooltip"]').tooltip();
 	$("#testng").click(function(){
 		$("#myframe").attr('src',this.href);
 		$("#newWin").attr('href',this.href);
