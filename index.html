@@ -55,7 +55,7 @@ color: gray;
         <li><a style="color: gray;" class="active" data-toggle="tab" href="#home"><i class="fa fa-home"> Home</i></a></li>
         <li><a style="color: gray;" data-toggle="tab" href="#About"><i class="fa fa-user"> About</i></a></li>
         <li><a style="color: gray;" data-toggle="tab" href="#blog"><i class="fa fa-bars"> Blog </i></a></li>
-        <li><a style="color: gray;" data-toggle="modal" href="#Contact"><i class="fa fa-comment"> Comments</i></a></li>
+        <!-- <li><a style="color: gray;" data-toggle="modal" href="#Contact"><i class="fa fa-comment"> Comments</i></a></li> -->
       </ul>
     </div>
   </div>
@@ -305,50 +305,36 @@ color: gray;
 </div>
 
 
-<div id="blog" style="background-color:white; color:black; width:100%;height:100%" class="container tab-pane fade">
+
+<div id="blog" style="background-color:white; color:black; width:100%;height:100%" class="text-center container tab-pane fade">
   <table class="table">
     <thead>
       <tr>
-        <th>Blogs published using <i class="fa fa-wordpress"></i></th>
-        <th>Blogs published using <i class="fa fa-github"></i></th>
+        <th class="text-center">Blogs </th>
+        <th class="text-center">Click on the link and see a preview here</i></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br>
+      <td>
+     
+      <button type="button" class="btn btn-lg" data-toggle="collapse" data-target="#demo">click to see the list of blogs published using <i class="fa fa-wordpress"></i><span class="caret"></span></button>
+      <br>
+		<div id="demo" class="collapse">
+		<a class="text-primary" style="text-decoration: underline" id="testng" onclick="return false" href="https://javamyuniverse.wordpress.com/2016/07/14/factory-of-testng-with-selenium-webdriver/">Factory of TestNG with Selenium web-driver</a>
+ 		<br>
+ 		<a class="text-primary" style="text-decoration: underline" id="lambda" onclick="return false" href="https://javamyuniverse.wordpress.com/2016/06/27/26/">Java 8 New feature - Lambda </a>
+		</div>
+ 		
+		
 		</td>
-        <td><br>
-		<br><br>
-		<br><br>
+		<td>
+		<a id="newWin" href="https://javamyuniverse.wordpress.com" target="_blank">To see this in a separate window click here</a>
+		<iframe id="myframe" style="width:90%" height=500px src="https://javamyuniverse.wordpress.com">
+		</iframe>
 		<br>
-        <br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>
-		<br></td>
+		
+		</td>
       </tr>
     </tbody>
   </table>
@@ -438,7 +424,14 @@ color: gray;
 
 <script>
 $(document).ready(function(){
-	
+	$("#testng").click(function(){
+		$("#myframe").attr('src',this.href);
+		$("#newWin").attr('href',this.href);
+	})
+	$("#lambda").click(function(){
+		$("#myframe").attr('src',this.href);
+		$("#newWin").attr('href',this.href);
+	})
 	$('#revuCarousel').carousel({
 		  interval: 4000
 		});
